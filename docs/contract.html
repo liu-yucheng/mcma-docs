@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Browser contract | dsh-mcma</title>
+    <link rel="stylesheet" href="docs.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-title" href="index.html">dsh-mcma documentation</a>
+        <nav class="site-nav" aria-label="Documentation pages">
+          <a href="index.html">API reference</a>
+          <a href="natural_language_styles.html">Natural language</a>
+          <a href="code_styles.html">Code styles</a>
+          <a href="visualizations.html">How it works</a>
+          <a href="changelog.html">Changelog</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <p class="eyebrow">MCMA page</p>
+      <h1>Browser contract</h1>
+      <p class="lede">The nine settings routes and the one state route that the browser half calls.</p>
+      <article class="markdown-body">
+<h1>Browser contract</h1>
+<p>The plugin has two halves. The host half runs in <code>src/</code>. The browser half runs in
+<code>client/index.js</code>. The two halves speak over HTTP routes on the Harness web server, and the
+routes are the only coupling between them.</p>
+<h2>Routes</h2>
+<p>The plugin registers nine settings routes and one state route. Each route answers JSON. A reply
+holds <code>{&quot;ok&quot;: true, &quot;value&quot;: ...}</code> on success and <code>{&quot;ok&quot;: false, &quot;code&quot;: &quot;...&quot;, &quot;message&quot;: &quot;...&quot;}</code>
+on failure.</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Method</th>
+<th>Body</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/api/dsh-mcma/describe</code></td>
+<td>POST</td>
+<td>none</td>
+<td>The settings record.</td>
+</tr>
+<tr>
+<td><code>/api/dsh-mcma/save</code></td>
+<td>POST</td>
+<td><code>{&quot;appDataRoot&quot;: &quot;...&quot;}</code></td>
+<td>The settings record.</td>
+</tr>
+<tr>
+<td><code>/api/dsh-mcma/clear</code></td>
+<td>POST</td>
+<td><code>{&quot;confirm&quot;: true}</code></td>
+<td>The settings record.</td>
+</tr>
+<tr>
+<td><code>/api/dsh-mcma/reset</code></td>
+<td>POST</td>
+<td><code>{&quot;confirm&quot;: true}</code></td>
+<td>The settings record.</td>
+</tr>
+<tr>
+<td><code>/api/dsh-mcma/limits</code></td>
+<td>POST</td>
+<td><code>{&quot;stageTimeLimits&quot;: {&quot;intake&quot;: 60}}</code></td>
+<td>The settings record.</td>
+</tr>
+<tr>
+<td><code>/api/dsh-mcma/limits-reset</code></td>
+<td>POST</td>
+<td>none</td>
+<td>The settings record.</td>
+</tr>
+<tr>
+<td><code>/api/dsh-mcma/policy</code></td>
+<td>POST</td>
+<td><code>{&quot;rollbackThreshold&quot;: 3}</code></td>
+<td>The policy record.</td>
+</tr>
+<tr>
+<td><code>/api/dsh-mcma/policy-reset</code></td>
+<td>POST</td>
+<td>none</td>
+<td>The policy record.</td>
+</tr>
+<tr>
+<td><code>/api/dsh-mcma/state</code></td>
+<td>GET</td>
+<td>none</td>
+<td>The read-only projection.</td>
+</tr>
+</tbody></table>
+<p>A stage time limit of <code>0</code> means automatic, so the read-only value of <code>rsi.json</code> applies. A rollback
+threshold of <code>0</code> means automatic in the same way.</p>
+<p>The settings record names the time budget of a pass:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>budget.forwardBudgetSeconds</code></td>
+<td>The wall-clock budget that one forward pass must fit. The value is 600 seconds.</td>
+</tr>
+<tr>
+<td><code>budget.tutoringSeconds</code></td>
+<td>The sum of the stage limits of one tutoring pass.</td>
+</tr>
+<tr>
+<td><code>budget.gradingSeconds</code></td>
+<td>The sum of the stage limits of one grading pass.</td>
+</tr>
+<tr>
+<td><code>budget.validationSeconds</code></td>
+<td>The clock of a validation pass, at 80 percent of the pass that it runs.</td>
+</tr>
+<tr>
+<td><code>budget.testSeconds</code></td>
+<td>The clock of a test pass, at 80 percent in the same way.</td>
+</tr>
+<tr>
+<td><code>budget.backwardSeconds</code></td>
+<td>The limit of the self-evolution stage of one session.</td>
+</tr>
+</tbody></table>
+<h2>Guards</h2>
+<p>A route refuses a request that the browser marks <code>sec-fetch-site: cross-site</code>. A route also refuses
+a request whose <code>origin</code> host differs from the request host. A request body over 64 KiB is
+refused.</p>
+<h2>Command output</h2>
+<p>The command cards read the text of one command row. The row holds one line for each pattern:</p>
+<pre><code class="language-text">Mode: &lt;Tutoring|Grading&gt;
+Split: &lt;train|validation|test&gt;
+Problems: &lt;count&gt;
+&lt;sessionId&gt;: &lt;status&gt;. Workspace: &lt;path&gt;
+  Problem: &lt;name&gt; | Loss: &lt;value&gt;
+Decision: &lt;keep|rollback|baseline&gt;
+Verdict: &lt;improved|unchanged|regressed|baseline&gt;
+Elapsed: &lt;seconds&gt;s
+App data: &lt;path&gt;
+Error: &lt;text&gt;
+</code></pre>
+<p>A change to one of these lines needs a matching change in <code>client/index.js</code> and in
+<code>test/mcma.test.mjs</code>.</p>
+
+      </article>
+    </main>
+  </body>
+</html>

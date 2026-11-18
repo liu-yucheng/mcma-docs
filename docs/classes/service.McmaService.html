@@ -1,0 +1,790 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>McmaService | dsh-mcma - v0.39.2</title><meta name="description" content="Documentation for dsh-mcma"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="../index.html" class="title">dsh-mcma - v0.39.2</a>
+<div id="tsd-toolbar-links"><a href="contract.html">Browser contract</a><a href="../natural_language_styles.html">Natural language styles</a><a href="../code_styles.html">Code styles</a><a href="../visualizations.html">How it works</a><a href="../changelog.html">Changelog</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
+<ul role="listbox" id="tsd-search-results"></ul>
+<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+<div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-menu"></use></svg></a></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<ul class="tsd-breadcrumb" aria-label="Breadcrumb">
+<li><a href="../modules/service.html">service</a></li>
+<li><a href="" aria-current="page">McmaService</a></li></ul>
+<h1>Class McmaService</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>The training loop of the plugin.</p>
+</div></section><aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:268</li></ul></aside>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h5 class="tsd-index-heading uppercase">Index</h5></summary>
+<div class="tsd-accordion-details">
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading tsd-anchor-link" id="constructors">Constructors<a href="#constructors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-index-list"><a href="#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-index-list"><a href="#configuredappdata" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>configured<wbr/>App<wbr/>Data</span></a>
+<a href="#appdataroot" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>app<wbr/>Data<wbr/>Root</span></a>
+<a href="#layout" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>layout</span></a>
+<a href="#forward" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>forward</span></a>
+<a href="#validate" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>validate</span></a>
+<a href="#test" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>test</span></a>
+<a href="#backward" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>backward</span></a>
+<a href="#feedback" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>feedback</span></a>
+<a href="#status" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>status</span></a>
+<a href="#help" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>help</span></a>
+<a href="#helptopics" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>help<wbr/>Topics</span></a>
+<a href="#clearappdata" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>clear<wbr/>App<wbr/>Data</span></a>
+<a href="#readpolicy" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>read<wbr/>Policy</span></a>
+<a href="#setpolicy" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Policy</span></a>
+<a href="#resetpolicy" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reset<wbr/>Policy</span></a>
+<a href="#policyinfo" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>policy<wbr/>Info</span></a>
+<a href="#settingsinfo" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>settings<wbr/>Info</span></a>
+<a href="#seedfiles" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>seed<wbr/>Files</span></a>
+<a href="#evaluationof" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>evaluation<wbr/>Of</span></a>
+<a href="#scorecardof" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>scorecard<wbr/>Of</span></a>
+<a href="#writescorecardof" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>write<wbr/>Scorecard<wbr/>Of</span></a>
+<a href="#commandof" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>command<wbr/>Of</span></a>
+<a href="#splits" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>splits</span></a>
+<a href="#pendingplans" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pending<wbr/>Plans</span></a>
+<a href="#defaultconfig" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>default<wbr/>Config</span></a>
+<a href="#defaultpluginconfig" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>default<wbr/>Plugin<wbr/>Config</span></a>
+<a href="#stagenotes" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>stage<wbr/>Notes</span></a>
+<a href="#problemsin" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>problems<wbr/>In</span></a>
+<a href="#removeworkspace" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Workspace</span></a>
+<a href="#appliedevolutiondirectory" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>applied<wbr/>Evolution<wbr/>Directory</span></a>
+<a href="#pendingevolutiondirectory" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pending<wbr/>Evolution<wbr/>Directory</span></a>
+<a href="#gradientof" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>gradient<wbr/>Of</span></a>
+<a href="#stagelist" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>stage<wbr/>List</span></a>
+<a href="#evaldirectoryof" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>eval<wbr/>Directory<wbr/>Of</span></a>
+<a href="#sessionof" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>session<wbr/>Of</span></a>
+<a href="#sessionline" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>session<wbr/>Line</span></a>
+<a href="#runline" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>run<wbr/>Line</span></a>
+<a href="#candidatetext" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>candidate<wbr/>Text</span></a>
+</div></section></div></details></section></section>
+<details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h2 class="tsd-anchor-link" id="constructors-1">Constructors<a href="#constructors-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
+<section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="constructor"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="constructormcmaservice"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">McmaService</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">ctx</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/dsh.PluginContext.html" class="tsd-signature-type tsd-kind-interface">PluginContext</a><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.ServiceOptions.html" class="tsd-signature-type tsd-kind-interface">ServiceOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">McmaService</a><a href="#constructormcmaservice" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Build one service.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">ctx</span>: <a href="../interfaces/dsh.PluginContext.html" class="tsd-signature-type tsd-kind-interface">PluginContext</a></span>
+<div class="tsd-comment tsd-typography"><p>The plugin context.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/service.ServiceOptions.html" class="tsd-signature-type tsd-kind-interface">ServiceOptions</a></span>
+<div class="tsd-comment tsd-typography"><p>The options of the service.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">McmaService</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:278</li></ul></aside></div></li></ul></section></section></details>
+<details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
+<section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="configuredappdata"><span>configured<wbr/>App<wbr/>Data</span><a href="#configuredappdata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="configuredappdata-1"><span class="tsd-kind-call-signature">configuredAppData</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#configuredappdata-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the configured app-data root.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>The absolute path.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:288</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="appdataroot"><span>app<wbr/>Data<wbr/>Root</span><a href="#appdataroot" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="appdataroot-1"><span class="tsd-kind-call-signature">appDataRoot</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#appdataroot-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the effective app-data root and copy the seed when the directory is empty.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>The absolute path.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:297</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="layout"><span>layout</span><a href="#layout" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="layout-1"><span class="tsd-kind-call-signature">layout</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">split</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">mode</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">workspace</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">sessionId</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">configsVersion</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/paths.McmaLayout.html" class="tsd-signature-type tsd-kind-interface">McmaLayout</a><a href="#layout-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Build the layout of one pass.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">split</span>: <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a></span>
+<div class="tsd-comment tsd-typography"><p>The data split.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">mode</span>: <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a></span>
+<div class="tsd-comment tsd-typography"><p>The mode.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">workspace</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The workspace root of the host session.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">sessionId</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;_session&quot;</span></span>
+<div class="tsd-comment tsd-typography"><p>The session identifier. A placeholder is the default.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">configsVersion</span>: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></span>
+<div class="tsd-comment tsd-typography"><p>The parameters version.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/paths.McmaLayout.html" class="tsd-signature-type tsd-kind-interface">McmaLayout</a></h4><p>The layout.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:314</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="forward"><span>forward</span><a href="#forward" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="forward-1"><span class="tsd-kind-call-signature">forward</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.ForwardOptions.html" class="tsd-signature-type tsd-kind-interface">ForwardOptions</a><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.PassResult.html" class="tsd-signature-type tsd-kind-interface">PassResult</a><span class="tsd-signature-symbol">&gt;</span><a href="#forward-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Run one pass of the forward direction.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/types.ForwardOptions.html" class="tsd-signature-type tsd-kind-interface">ForwardOptions</a></span>
+<div class="tsd-comment tsd-typography"><p>The inputs of the pass.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">context</span>: <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a></span>
+<div class="tsd-comment tsd-typography"><p>The parent agent and the signal.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.PassResult.html" class="tsd-signature-type tsd-kind-interface">PassResult</a><span class="tsd-signature-symbol">&gt;</span></h4><p>The result of the pass.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:443</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="validate"><span>validate</span><a href="#validate" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="validate-1"><span class="tsd-kind-call-signature">validate</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.ForwardOptions.html" class="tsd-signature-type tsd-kind-interface">ForwardOptions</a><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.PassResult.html" class="tsd-signature-type tsd-kind-interface">PassResult</a><span class="tsd-signature-symbol">&gt;</span><a href="#validate-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Run one validation pass and keep or roll back the parameters.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/types.ForwardOptions.html" class="tsd-signature-type tsd-kind-interface">ForwardOptions</a></span>
+<div class="tsd-comment tsd-typography"><p>The inputs of the pass.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">context</span>: <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a></span>
+<div class="tsd-comment tsd-typography"><p>The parent agent and the signal.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.PassResult.html" class="tsd-signature-type tsd-kind-interface">PassResult</a><span class="tsd-signature-symbol">&gt;</span></h4><p>The result of the pass.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:528</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="test"><span>test</span><a href="#test" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="test-1"><span class="tsd-kind-call-signature">test</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.ForwardOptions.html" class="tsd-signature-type tsd-kind-interface">ForwardOptions</a><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.PassResult.html" class="tsd-signature-type tsd-kind-interface">PassResult</a><span class="tsd-signature-symbol">&gt;</span><a href="#test-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Run one test pass and report whether the parameters improved.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/types.ForwardOptions.html" class="tsd-signature-type tsd-kind-interface">ForwardOptions</a></span>
+<div class="tsd-comment tsd-typography"><p>The inputs of the pass.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">context</span>: <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a></span>
+<div class="tsd-comment tsd-typography"><p>The parent agent and the signal.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.PassResult.html" class="tsd-signature-type tsd-kind-interface">PassResult</a><span class="tsd-signature-symbol">&gt;</span></h4><p>The result of the pass.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:541</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="backward"><span>backward</span><a href="#backward" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="backward-1"><span class="tsd-kind-call-signature">backward</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.BackwardOptions.html" class="tsd-signature-type tsd-kind-interface">BackwardOptions</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.BackwardResult.html" class="tsd-signature-type tsd-kind-interface">BackwardResult</a><span class="tsd-signature-symbol">&gt;</span><a href="#backward-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Apply the pending evolution plans.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/types.BackwardOptions.html" class="tsd-signature-type tsd-kind-interface">BackwardOptions</a></span>
+<div class="tsd-comment tsd-typography"><p>The selectors of the pass.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">context</span>: <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a></span>
+<div class="tsd-comment tsd-typography"><p>The parent agent and the signal.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.BackwardResult.html" class="tsd-signature-type tsd-kind-interface">BackwardResult</a><span class="tsd-signature-symbol">&gt;</span></h4><p>The result of the backward pass.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:768</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="feedback"><span>feedback</span><a href="#feedback" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="feedback-1"><span class="tsd-kind-call-signature">feedback</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">items</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-keyword">readonly</span> <a href="../interfaces/types.FeedbackItem.html" class="tsd-signature-type tsd-kind-interface">FeedbackItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.FeedbackResult.html" class="tsd-signature-type tsd-kind-interface">FeedbackResult</a><span class="tsd-signature-symbol">&gt;</span><a href="#feedback-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Append human feedback to the pending sessions and revise their records.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">items</span>: <span class="tsd-signature-keyword">readonly</span> <a href="../interfaces/types.FeedbackItem.html" class="tsd-signature-type tsd-kind-interface">FeedbackItem</a><span class="tsd-signature-symbol">[]</span></span>
+<div class="tsd-comment tsd-typography"><p>The feedback requests.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">context</span>: <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a></span>
+<div class="tsd-comment tsd-typography"><p>The parent agent and the signal.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/types.FeedbackResult.html" class="tsd-signature-type tsd-kind-interface">FeedbackResult</a><span class="tsd-signature-symbol">&gt;</span></h4><p>The result of the pass.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1064</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="status"><span>status</span><a href="#status" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="status-1"><span class="tsd-kind-call-signature">status</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.StatusReport.html" class="tsd-signature-type tsd-kind-interface">StatusReport</a><a href="#status-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the live status of the app data.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/service.StatusReport.html" class="tsd-signature-type tsd-kind-interface">StatusReport</a></h4><p>The status report.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1324</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="help"><span>help</span><a href="#help" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="help-1"><span class="tsd-kind-call-signature">help</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.HelpSnapshot.html" class="tsd-signature-type tsd-kind-interface">HelpSnapshot</a><a href="#help-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the live help snapshot.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/service.HelpSnapshot.html" class="tsd-signature-type tsd-kind-interface">HelpSnapshot</a></h4><p>The snapshot.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1431</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="helptopics"><span>help<wbr/>Topics</span><a href="#helptopics" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="helptopics-1"><span class="tsd-kind-call-signature">helpTopics</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">topics</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-keyword">readonly</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><a href="#helptopics-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Write one topic page with a helper subagent.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">topics</span>: <span class="tsd-signature-keyword">readonly</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></span>
+<div class="tsd-comment tsd-typography"><p>The topic names.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">context</span>: <a href="../interfaces/service.CommandContext.html" class="tsd-signature-type tsd-kind-interface">CommandContext</a></span>
+<div class="tsd-comment tsd-typography"><p>The parent agent and the signal.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4><p>The page text.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1471</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="clearappdata"><span>clear<wbr/>App<wbr/>Data</span><a href="#clearappdata" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="clearappdata-1"><span class="tsd-kind-call-signature">clearAppData</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">confirm</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/service.ClearResult.html" class="tsd-signature-type tsd-kind-interface">ClearResult</a><a href="#clearappdata-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Clear the app data and restore the packaged seed.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">confirm</span>: <span class="tsd-signature-type">boolean</span></span>
+<div class="tsd-comment tsd-typography"><p>True to delete the directory.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/service.ClearResult.html" class="tsd-signature-type tsd-kind-interface">ClearResult</a></h4><p>The result of the request.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1490</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="readpolicy"><span>read<wbr/>Policy</span><a href="#readpolicy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="readpolicy-1"><span class="tsd-kind-call-signature">readPolicy</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">rollbackThreshold</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">}</span><a href="#readpolicy-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Read the policy that the plugin UI writes.</p>
+<p>A value of zero means that the read-only configuration decides.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">rollbackThreshold</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">}</span></h4><p>The policy.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1529</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="setpolicy"><span>set<wbr/>Policy</span><a href="#setpolicy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="setpolicy-1"><span class="tsd-kind-call-signature">setPolicy</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">value</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.SettingsRollbackInfo.html" class="tsd-signature-type tsd-kind-interface">SettingsRollbackInfo</a><a href="#setpolicy-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Write the policy that the plugin UI writes.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">value</span>: <span class="tsd-signature-type">unknown</span></span>
+<div class="tsd-comment tsd-typography"><p>The requested rollback threshold. Zero means automatic.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.SettingsRollbackInfo.html" class="tsd-signature-type tsd-kind-interface">SettingsRollbackInfo</a></h4><p>The effective rollback information.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1545</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="resetpolicy"><span>reset<wbr/>Policy</span><a href="#resetpolicy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="resetpolicy-1"><span class="tsd-kind-call-signature">resetPolicy</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.SettingsRollbackInfo.html" class="tsd-signature-type tsd-kind-interface">SettingsRollbackInfo</a><a href="#resetpolicy-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Remove the policy that the plugin UI writes.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.SettingsRollbackInfo.html" class="tsd-signature-type tsd-kind-interface">SettingsRollbackInfo</a></h4><p>The effective rollback information.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1566</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="policyinfo"><span>policy<wbr/>Info</span><a href="#policyinfo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="policyinfo-1"><span class="tsd-kind-call-signature">policyInfo</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.SettingsRollbackInfo.html" class="tsd-signature-type tsd-kind-interface">SettingsRollbackInfo</a><a href="#policyinfo-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the rollback information.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.SettingsRollbackInfo.html" class="tsd-signature-type tsd-kind-interface">SettingsRollbackInfo</a></h4><p>The configured, effective, and default threshold.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1584</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="settingsinfo"><span>settings<wbr/>Info</span><a href="#settingsinfo" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="settingsinfo-1"><span class="tsd-kind-call-signature">settingsInfo</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.SettingsInfo.html" class="tsd-signature-type tsd-kind-interface">SettingsInfo</a><a href="#settingsinfo-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the live settings of the plugin.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.SettingsInfo.html" class="tsd-signature-type tsd-kind-interface">SettingsInfo</a></h4><p>The settings.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1599</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="seedfiles"><span>seed<wbr/>Files</span><a href="#seedfiles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="seedfiles-1"><span class="tsd-kind-call-signature">seedFiles</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><a href="#seedfiles-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Read the seed file names.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4><p>The relative paths.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1647</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="evaluationof"><span>evaluation<wbr/>Of</span><a href="#evaluationof" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="evaluationof-1"><span class="tsd-kind-call-signature">evaluationOf</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">directory</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">mode</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">split</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.EvaluationRecord.html" class="tsd-signature-type tsd-kind-interface">EvaluationRecord</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span><a href="#evaluationof-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Read the evaluation record of one session for a display.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">directory</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The evaluation directory of the session.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">mode</span>: <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a></span>
+<div class="tsd-comment tsd-typography"><p>The mode of the session.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">sessionId</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The identifier of the session.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">split</span>: <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a></span>
+<div class="tsd-comment tsd-typography"><p>The data split.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.EvaluationRecord.html" class="tsd-signature-type tsd-kind-interface">EvaluationRecord</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><p>The record, or undefined.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1660</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="scorecardof"><span>scorecard<wbr/>Of</span><a href="#scorecardof" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="scorecardof-1"><span class="tsd-kind-call-signature">scorecardOf</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">layout</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/paths.McmaLayout.html" class="tsd-signature-type tsd-kind-interface">McmaLayout</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">record</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">split</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">mode</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a> <span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/evaluation.Scorecard.html" class="tsd-signature-type tsd-kind-interface">Scorecard</a><a href="#scorecardof-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Measure the scorecard of one session.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">layout</span>: <a href="../interfaces/paths.McmaLayout.html" class="tsd-signature-type tsd-kind-interface">McmaLayout</a></span>
+<div class="tsd-comment tsd-typography"><p>The layout of the session.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">record</span>: <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">split</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">mode</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a> <span class="tsd-signature-symbol">}</span></span>
+<div class="tsd-comment tsd-typography"><p>The session record.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/evaluation.Scorecard.html" class="tsd-signature-type tsd-kind-interface">Scorecard</a></h4><p>The scorecard.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1676</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="writescorecardof"><span>write<wbr/>Scorecard<wbr/>Of</span><a href="#writescorecardof" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="writescorecardof-1"><span class="tsd-kind-call-signature">writeScorecardOf</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">layout</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/paths.McmaLayout.html" class="tsd-signature-type tsd-kind-interface">McmaLayout</a><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">record</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">split</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">mode</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a> <span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#writescorecardof-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Write the scorecard of one session.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">layout</span>: <a href="../interfaces/paths.McmaLayout.html" class="tsd-signature-type tsd-kind-interface">McmaLayout</a></span>
+<div class="tsd-comment tsd-typography"><p>The layout of the session.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">record</span>: <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">split</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">mode</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a> <span class="tsd-signature-symbol">}</span></span>
+<div class="tsd-comment tsd-typography"><p>The session record.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1686</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="commandof"><span>command<wbr/>Of</span><a href="#commandof" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="commandof-1"><span class="tsd-kind-call-signature">commandOf</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">split</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#commandof-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the text of one split command.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">split</span>: <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a></span>
+<div class="tsd-comment tsd-typography"><p>The data split.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>The command text.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1696</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="splits"><span>splits</span><a href="#splits" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="splits-1"><span class="tsd-kind-call-signature">splits</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-keyword">readonly</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">[]</span><a href="#splits-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the identifier list of the splits.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-keyword">readonly</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">[]</span></h4><p>The identifiers.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1705</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="pendingplans"><span>pending<wbr/>Plans</span><a href="#pendingplans" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="pendingplans-1"><span class="tsd-kind-call-signature">pendingPlans</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.PendingSelection.html" class="tsd-signature-type tsd-kind-interface">PendingSelection</a><span class="tsd-signature-symbol">[]</span><a href="#pendingplans-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the pending plans for a display.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.PendingSelection.html" class="tsd-signature-type tsd-kind-interface">PendingSelection</a><span class="tsd-signature-symbol">[]</span></h4><p>The selections.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1714</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="defaultconfig"><span>default<wbr/>Config</span><a href="#defaultconfig" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="defaultconfig-1"><span class="tsd-kind-call-signature">defaultConfig</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">name</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.SubagentName.html" class="tsd-signature-type tsd-kind-type-alias">SubagentName</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.SubagentConfig.html" class="tsd-signature-type tsd-kind-interface">SubagentConfig</a><a href="#defaultconfig-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the default configuration of one subagent.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">name</span>: <a href="../types/types.SubagentName.html" class="tsd-signature-type tsd-kind-type-alias">SubagentName</a></span>
+<div class="tsd-comment tsd-typography"><p>The subagent name.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.SubagentConfig.html" class="tsd-signature-type tsd-kind-interface">SubagentConfig</a></h4><p>The configuration.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1732</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="defaultpluginconfig"><span>default<wbr/>Plugin<wbr/>Config</span><a href="#defaultpluginconfig" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="defaultpluginconfig-1"><span class="tsd-kind-call-signature">defaultPluginConfig</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.McmaConfig.html" class="tsd-signature-type tsd-kind-interface">McmaConfig</a><a href="#defaultpluginconfig-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the default plugin configuration.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.McmaConfig.html" class="tsd-signature-type tsd-kind-interface">McmaConfig</a></h4><p>The configuration.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1741</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="stagenotes"><span>stage<wbr/>Notes</span><a href="#stagenotes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="stagenotes-1"><span class="tsd-kind-call-signature">stageNotes</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">appData</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">stage</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#stagenotes-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Read the notes of one stage of one session.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">appData</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The app-data root.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">sessionId</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The identifier of the session.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">stage</span>: <a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a></span>
+<div class="tsd-comment tsd-typography"><p>The stage identifier.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>The note text.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1753</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="problemsin"><span>problems<wbr/>In</span><a href="#problemsin" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="problemsin-1"><span class="tsd-kind-call-signature">problemsIn</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">directory</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.ProblemInput.html" class="tsd-signature-type tsd-kind-interface">ProblemInput</a><span class="tsd-signature-symbol">[]</span><a href="#problemsin-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the problem inputs that one directory holds.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">directory</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The directory path.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.ProblemInput.html" class="tsd-signature-type tsd-kind-interface">ProblemInput</a><span class="tsd-signature-symbol">[]</span></h4><p>The inputs.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1765</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="removeworkspace"><span>remove<wbr/>Workspace</span><a href="#removeworkspace" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="removeworkspace-1"><span class="tsd-kind-call-signature">removeWorkspace</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">workspace</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#removeworkspace-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Remove one session directory from the workspace.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">workspace</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The workspace root.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">sessionId</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The identifier of the session.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1787</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="appliedevolutiondirectory"><span>applied<wbr/>Evolution<wbr/>Directory</span><a href="#appliedevolutiondirectory" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="appliedevolutiondirectory-1"><span class="tsd-kind-call-signature">appliedEvolutionDirectory</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">appData</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#appliedevolutiondirectory-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the applied evolution directory of one session.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">appData</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The app-data root.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">sessionId</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The identifier of the session.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>The directory path.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1801</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="pendingevolutiondirectory"><span>pending<wbr/>Evolution<wbr/>Directory</span><a href="#pendingevolutiondirectory" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="pendingevolutiondirectory-1"><span class="tsd-kind-call-signature">pendingEvolutionDirectory</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">appData</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#pendingevolutiondirectory-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the pending evolution directory of one session.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">appData</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The app-data root.</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">sessionId</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The identifier of the session.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>The directory path.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1812</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="gradientof"><span>gradient<wbr/>Of</span><a href="#gradientof" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="gradientof-1"><span class="tsd-kind-call-signature">gradientOf</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">directory</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.GradientRecord.html" class="tsd-signature-type tsd-kind-interface">GradientRecord</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span><a href="#gradientof-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the gradient record of one session.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">directory</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The evaluation directory of the session.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../interfaces/types.GradientRecord.html" class="tsd-signature-type tsd-kind-interface">GradientRecord</a> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><p>The record, or undefined.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1822</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="stagelist"><span>stage<wbr/>List</span><a href="#stagelist" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="stagelist-1"><span class="tsd-kind-call-signature">stageList</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">mode</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-keyword">readonly</span> <a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a><span class="tsd-signature-symbol">[]</span><a href="#stagelist-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the stage list of one mode.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">mode</span>: <a href="../types/types.Mode.html" class="tsd-signature-type tsd-kind-type-alias">Mode</a></span>
+<div class="tsd-comment tsd-typography"><p>The mode.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-keyword">readonly</span> <a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a><span class="tsd-signature-symbol">[]</span></h4><p>The stage identifiers.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1833</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="evaldirectoryof"><span>eval<wbr/>Directory<wbr/>Of</span><a href="#evaldirectoryof" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="evaldirectoryof-1"><span class="tsd-kind-call-signature">evalDirectoryOf</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">split</span><span class="tsd-signature-symbol">:</span> <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#evaldirectoryof-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the evaluation directory name of one split.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">split</span>: <a href="../types/types.Split.html" class="tsd-signature-type tsd-kind-type-alias">Split</a></span>
+<div class="tsd-comment tsd-typography"><p>The split.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>The directory name inside <code>evals/</code>.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1843</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="sessionof"><span>session<wbr/>Of</span><a href="#sessionof" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="sessionof-1"><span class="tsd-kind-call-signature">sessionOf</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">sessionId</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span><a href="#sessionof-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the session record of one session.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">sessionId</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>The identifier of the session.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span> <span class="tsd-signature-symbol">|</span> <span class="tsd-signature-type">undefined</span></h4><p>The record, or undefined.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1853</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="sessionline"><span>session<wbr/>Line</span><a href="#sessionline" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="sessionline-1"><span class="tsd-kind-call-signature">sessionLine</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">result</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.SessionOutcome.html" class="tsd-signature-type tsd-kind-interface">SessionOutcome</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#sessionline-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Summarize one run for the command output.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">result</span>: <a href="../interfaces/types.SessionOutcome.html" class="tsd-signature-type tsd-kind-interface">SessionOutcome</a></span>
+<div class="tsd-comment tsd-typography"><p>The result of one session.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>One line for the reader.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1867</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="runline"><span>run<wbr/>Line</span><a href="#runline" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="runline-1"><span class="tsd-kind-call-signature">runLine</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">result</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/types.RunResult.html" class="tsd-signature-type tsd-kind-interface">RunResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#runline-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Summarize one run result.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">result</span>: <a href="../interfaces/types.RunResult.html" class="tsd-signature-type tsd-kind-interface">RunResult</a></span>
+<div class="tsd-comment tsd-typography"><p>The result of one session.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>One line for the reader.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1878</li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member">
+<h3 class="tsd-anchor-link" id="candidatetext"><span>candidate<wbr/>Text</span><a href="#candidatetext" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="candidatetext-1"><span class="tsd-kind-call-signature">candidateText</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">candidate</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/optimizer.PendingCandidate.html" class="tsd-signature-type tsd-kind-interface">PendingCandidate</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><a href="#candidatetext-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Return the diagnostics of one plan.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">candidate</span>: <a href="../interfaces/optimizer.PendingCandidate.html" class="tsd-signature-type tsd-kind-interface">PendingCandidate</a></span>
+<div class="tsd-comment tsd-typography"><p>The pending session.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><p>The text.</p>
+<aside class="tsd-sources">
+<ul>
+<li>Defined in service.ts:1889</li></ul></aside></div></li></ul></section></section></details></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></div>
+<div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>On This Page</h3></summary>
+<div class="tsd-accordion-details">
+<details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
+<div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
+<details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
+<div><a href="#configuredappdata"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>configured<wbr/>App<wbr/>Data</span></a><a href="#appdataroot"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>app<wbr/>Data<wbr/>Root</span></a><a href="#layout"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>layout</span></a><a href="#forward"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>forward</span></a><a href="#validate"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>validate</span></a><a href="#test"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>test</span></a><a href="#backward"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>backward</span></a><a href="#feedback"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>feedback</span></a><a href="#status"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>status</span></a><a href="#help"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>help</span></a><a href="#helptopics"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>help<wbr/>Topics</span></a><a href="#clearappdata"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>clear<wbr/>App<wbr/>Data</span></a><a href="#readpolicy"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>read<wbr/>Policy</span></a><a href="#setpolicy"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>set<wbr/>Policy</span></a><a href="#resetpolicy"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reset<wbr/>Policy</span></a><a href="#policyinfo"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>policy<wbr/>Info</span></a><a href="#settingsinfo"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>settings<wbr/>Info</span></a><a href="#seedfiles"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>seed<wbr/>Files</span></a><a href="#evaluationof"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>evaluation<wbr/>Of</span></a><a href="#scorecardof"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>scorecard<wbr/>Of</span></a><a href="#writescorecardof"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>write<wbr/>Scorecard<wbr/>Of</span></a><a href="#commandof"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>command<wbr/>Of</span></a><a href="#splits"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>splits</span></a><a href="#pendingplans"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pending<wbr/>Plans</span></a><a href="#defaultconfig"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>default<wbr/>Config</span></a><a href="#defaultpluginconfig"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>default<wbr/>Plugin<wbr/>Config</span></a><a href="#stagenotes"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>stage<wbr/>Notes</span></a><a href="#problemsin"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>problems<wbr/>In</span></a><a href="#removeworkspace"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>remove<wbr/>Workspace</span></a><a href="#appliedevolutiondirectory"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>applied<wbr/>Evolution<wbr/>Directory</span></a><a href="#pendingevolutiondirectory"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>pending<wbr/>Evolution<wbr/>Directory</span></a><a href="#gradientof"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>gradient<wbr/>Of</span></a><a href="#stagelist"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>stage<wbr/>List</span></a><a href="#evaldirectoryof"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>eval<wbr/>Directory<wbr/>Of</span></a><a href="#sessionof"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>session<wbr/>Of</span></a><a href="#sessionline"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>session<wbr/>Line</span></a><a href="#runline"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>run<wbr/>Line</span></a><a href="#candidatetext"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>candidate<wbr/>Text</span></a></div></details></div></details></div>
+<div class="site-menu">
+<nav id="tsd-sidebar-links" class="tsd-navigation"><a href="contract.html" class="tsd-nav-link">Browser contract</a><a href="../natural_language_styles.html" class="tsd-nav-link">Natural language styles</a><a href="../code_styles.html" class="tsd-nav-link">Code styles</a><a href="../visualizations.html" class="tsd-nav-link">How it works</a><a href="../changelog.html" class="tsd-nav-link">Changelog</a></nav>
+<nav class="tsd-navigation"><a href="../modules.html">dsh-mcma - v0.39.2</a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+<li>Loading...</li></ul></nav></div></div></div><footer>
+<p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer>
+<div class="overlay"></div></body></html>

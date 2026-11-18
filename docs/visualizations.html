@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How it works | dsh-mcma</title>
+    <link rel="stylesheet" href="docs.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-title" href="index.html">dsh-mcma documentation</a>
+        <nav class="site-nav" aria-label="Documentation pages">
+          <a href="index.html">API reference</a>
+          <a href="natural_language_styles.html">Natural language</a>
+          <a href="code_styles.html">Code styles</a>
+          <a href="visualizations.html">How it works</a>
+          <a href="changelog.html">Changelog</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <p class="eyebrow">MCMA mechanism</p>
+      <h1>How it works</h1>
+      <p class="lede">Six figures of the loop, the clock, the files, the rollback, the rubric, and the splits.</p>
+      <article class="markdown-body">
+<p>This page draws the machine, not the code. Each figure answers one question about how the plugin
+works: what moves in a forward pass, where the clock goes, where a file lands, when the parameters
+roll back, and how a rubric becomes one number.</p>
+<p>The figures are inline SVG. They inherit the color of this page, so they read the same in the light
+theme and the dark theme.</p>
+<h2>1. The training loop</h2>
+<p>One forward pass makes a product. The Evaluator scores the product. The plugin reduces the score to
+one loss. The Evolver turns the loss into one plan. A backward pass turns the plan into the next
+parameters version.</p>
+<figure>
+<svg viewBox="0 0 860 250" width="100%" role="img" aria-labelledby="loopTitle loopDesc"
+  font-family="inherit" fill="none">
+  <title id="loopTitle">The MCMA training loop</title>
+  <desc id="loopDesc">Parameters feed a forward pass. The forward pass writes products and an
+    evaluation record. The record becomes a loss. The loss becomes a plan. A backward pass turns the
+    plan into the next parameters version.</desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+      orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <rect x="11" y="60" width="150" height="64" rx="10" stroke="var(--line)" fill="var(--line)"
+    fill-opacity="0.12" />
+  <text x="86" y="86" text-anchor="middle" font-size="13" font-weight="600"
+    fill="currentColor">Parameters</text>
+  <text x="86" y="106" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">configs_rw/v&lt;N&gt;</text>
+  <rect x="183" y="60" width="150" height="64" rx="10" stroke="var(--accent)" fill="var(--accent)"
+    fill-opacity="0.14" />
+  <text x="258" y="86" text-anchor="middle" font-size="13" font-weight="600"
+    fill="currentColor">Forward pass</text>
+  <text x="258" y="106" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">intake, work, eval</text>
+  <rect x="355" y="60" width="150" height="64" rx="10" stroke="var(--line)" fill="var(--line)"
+    fill-opacity="0.12" />
+  <text x="430" y="86" text-anchor="middle" font-size="13" font-weight="600"
+    fill="currentColor">Products</text>
+  <text x="430" y="106" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">report.html, code/</text>
+  <rect x="527" y="60" width="150" height="64" rx="10" stroke="var(--accent)" fill="var(--accent)"
+    fill-opacity="0.14" />
+  <text x="602" y="86" text-anchor="middle" font-size="13" font-weight="600"
+    fill="currentColor">Loss</text>
+  <text x="602" y="106" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">loss.json, 0 is best</text>
+  <rect x="699" y="60" width="150" height="64" rx="10" stroke="var(--line)" fill="var(--line)"
+    fill-opacity="0.12" />
+  <text x="774" y="86" text-anchor="middle" font-size="13" font-weight="600"
+    fill="currentColor">Gradient</text>
+  <text x="774" y="106" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">plan.json</text>
+  <path d="M 161 92 L 179 92" stroke="currentColor" marker-end="url(#tip)" opacity="0.75" />
+  <path d="M 333 92 L 351 92" stroke="currentColor" marker-end="url(#tip)" opacity="0.75" />
+  <path d="M 505 92 L 523 92" stroke="currentColor" marker-end="url(#tip)" opacity="0.75" />
+  <path d="M 677 92 L 695 92" stroke="currentColor" marker-end="url(#tip)" opacity="0.75" />
+  <path d="M 774 124 L 774 190 L 86 190 L 86 128" stroke="var(--accent)" stroke-width="2"
+    marker-end="url(#tip)" />
+  <text x="430" y="212" text-anchor="middle" font-size="12" fill="currentColor"
+    >backward pass: /mcma_backward applies the plan and writes v&lt;N+1&gt;</text>
+</svg>
+<figcaption>One turn of the loop. The plugin writes the loss and the checkpoint. The subagents write
+the evaluation record, the gradient, and the plan.</figcaption>
+</figure><h2>2. Where the time goes</h2>
+<p>One forward pass fits 600 seconds. The pass runs one work stage, never both. A validation pass and a
+test pass keep 80 percent of the clock.</p>
+<figure>
+<svg viewBox="0 0 780 260" width="100%" role="img" aria-labelledby="timeTitle timeDesc"
+  font-family="inherit" fill="none">
+  <title id="timeTitle">Stage limits of one pass</title>
+  <desc id="timeDesc">A tutoring pass runs 60 seconds of intake, 380 seconds of tutoring, and 150
+    seconds of self-evaluation for 590 seconds. A grading pass runs 60, 350, and 150 for 560 seconds.
+    A validation pass and a test pass take 80 percent of that clock.</desc>
+  <text x="40" y="34" font-size="11" fill="currentColor" opacity="0.7">Seconds from the start of
+    the pass</text>
+  <line x1="40" y1="212" x2="760" y2="212" stroke="var(--line)" />
+  <line x1="740" y1="46" x2="740" y2="220" stroke="var(--accent)" stroke-dasharray="4 4" />
+  <text x="734" y="44" text-anchor="end" font-size="11" fill="var(--accent)">600 s budget</text>
+  <text x="40" y="70" font-size="12" font-weight="600" fill="currentColor">Tutoring pass</text>
+  <rect x="40" y="76" width="70" height="26" fill="#b7dcc6" />
+  <rect x="110" y="76" width="443" height="26" fill="#2f6f4f" />
+  <rect x="553" y="76" width="175" height="26" fill="#7fae94" />
+  <text x="145" y="93" font-size="10" fill="#ffffff">intake 60</text>
+  <text x="330" y="93" font-size="10" fill="#ffffff">tutoring 380</text>
+  <text x="640" y="93" font-size="10" fill="#0d2b1c">self-evaluation 150</text>
+  <text x="40" y="126" font-size="12" font-weight="600" fill="currentColor">Grading pass</text>
+  <rect x="40" y="132" width="70" height="26" fill="#b7dcc6" />
+  <rect x="110" y="132" width="408" height="26" fill="#2f6f4f" />
+  <rect x="518" y="132" width="175" height="26" fill="#7fae94" />
+  <text x="145" y="149" font-size="10" fill="#ffffff">intake 60</text>
+  <text x="313" y="149" font-size="10" fill="#ffffff">grading 350</text>
+  <text x="605" y="149" font-size="10" fill="#0d2b1c">self-evaluation 150</text>
+  <text x="40" y="182" font-size="12" font-weight="600" fill="currentColor">Validation or test
+    pass</text>
+  <rect x="40" y="188" width="56" height="26" fill="#b7dcc6" opacity="0.75" />
+  <rect x="96" y="188" width="355" height="26" fill="#2f6f4f" opacity="0.75" />
+  <rect x="451" y="188" width="140" height="26" fill="#7fae94" opacity="0.75" />
+  <text x="300" y="205" font-size="10" fill="#ffffff">80 percent of the pass that it runs</text>
+  <text x="40" y="238" font-size="11" fill="currentColor" opacity="0.7">0</text>
+  <text x="180" y="238" font-size="11" fill="currentColor" opacity="0.7">120</text>
+  <text x="320" y="238" font-size="11" fill="currentColor" opacity="0.7">240</text>
+  <text x="460" y="238" font-size="11" fill="currentColor" opacity="0.7">360</text>
+  <text x="600" y="238" font-size="11" fill="currentColor" opacity="0.7">480</text>
+  <text x="740" y="238" font-size="11" fill="currentColor" opacity="0.7">600</text>
+</svg>
+<figcaption>A human sets each limit on the plugin settings page. A setting of 0 keeps the value of
+`configs_ro/rsi.json`.</figcaption>
+</figure><h2>3. Where a file lands</h2>
+<p>A session writes two kinds of output. The product belongs to the human and lives in the workspace.
+The training records belong to the loop and live in the app data.</p>
+<figure>
+<svg viewBox="0 0 800 300" width="100%" role="img" aria-labelledby="fileTitle fileDesc"
+  font-family="inherit" fill="none">
+  <title id="fileTitle">Files of one session</title>
+  <desc id="fileDesc">The workspace holds report.html, the code directory, and the session
+    records. The app data holds the evaluation record, the loss, the scorecard, and the evolution
+    plan.</desc>
+  <defs>
+    <marker id="tip3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+      orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <rect x="10" y="40" width="360" height="250" rx="10" stroke="var(--line)" fill="var(--line)"
+    fill-opacity="0.1" />
+  <text x="26" y="66" font-size="12" font-weight="600" fill="currentColor">Session workspace</text>
+  <text x="26" y="90" font-size="11" fill="currentColor" opacity="0.75">&lt;workspace&gt;/&lt;id&gt;/</text>
+  <text x="40" y="112" font-size="11" fill="currentColor" opacity="0.85">report.html</text>
+  <text x="40" y="134" font-size="11" fill="currentColor" opacity="0.85">code/part1_verify.py</text>
+  <text x="40" y="156" font-size="11" fill="currentColor" opacity="0.85">code/figures/</text>
+  <text x="40" y="178" font-size="11" fill="currentColor" opacity="0.85">grading.json</text>
+  <text x="40" y="200" font-size="11" fill="currentColor" opacity="0.85">problem/problem.md</text>
+  <text x="40" y="222" font-size="11" fill="currentColor" opacity="0.85">tutoring_prompt1.md</text>
+  <text x="40" y="244" font-size="11" fill="currentColor" opacity="0.85">session.json, state.json</text>
+  <rect x="430" y="40" width="360" height="250" rx="10" stroke="var(--accent)" fill="var(--accent)"
+    fill-opacity="0.1" />
+  <text x="446" y="66" font-size="12" font-weight="600" fill="currentColor">App data</text>
+  <text x="446" y="90" font-size="11" fill="currentColor" opacity="0.75">~/.dsh-mcma/</text>
+  <text x="460" y="112" font-size="11" fill="currentColor" opacity="0.85">evals/…/evals.json</text>
+  <text x="460" y="134" font-size="11" fill="currentColor" opacity="0.85">evals/…/loss.json</text>
+  <text x="460" y="156" font-size="11" fill="currentColor" opacity="0.85">evals/…/scores.json</text>
+  <text x="460" y="178" font-size="11" fill="currentColor" opacity="0.85">evolutions/pending/…/plan.json</text>
+  <text x="460" y="200" font-size="11" fill="currentColor" opacity="0.85">configs_rw/v&lt;N&gt;/</text>
+  <text x="460" y="222" font-size="11" fill="currentColor" opacity="0.85">sessions/&lt;id&gt;/</text>
+  <text x="460" y="244" font-size="11" fill="currentColor" opacity="0.85">styles/</text>
+  <path d="M 372 112 L 426 112" stroke="var(--accent)" marker-end="url(#tip3)" />
+  <path d="M 372 143 L 426 143" stroke="currentColor" opacity="0.6" marker-end="url(#tip3)" />
+  <path d="M 426 174 L 372 174" stroke="currentColor" opacity="0.6" marker-end="url(#tip3)" />
+  <text x="399" y="104" text-anchor="middle" font-size="9" fill="var(--accent)">evals</text>
+  <text x="399" y="136" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">loss</text>
+  <text x="399" y="196" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">plan</text>
+</svg>
+<figcaption>The arrow points from the product to the record, or from the plan back to the work. The
+Evaluator reads the workspace. The plugin reads `evals.json` and writes `loss.json`.</figcaption>
+</figure><h2>4. When the parameters roll back</h2>
+<p>A validation pass compares its loss with the best loss that a kept version reached. The comparison
+uses a tolerance of 0.02. Three worse passes in a row restore the best version.</p>
+<figure>
+<svg viewBox="0 0 800 220" width="100%" role="img" aria-labelledby="rollbackTitle rollbackDesc"
+  font-family="inherit" fill="none">
+  <title id="rollbackTitle">The rollback rule</title>
+  <desc id="rollbackDesc">A loss that beats the best loss by the tolerance keeps the version and
+    resets the counter. A worse loss adds one to the counter. The third worse loss restores the best
+    version.</desc>
+  <defs>
+    <marker id="tip4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+      orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <rect x="10" y="70" width="200" height="70" rx="10" stroke="var(--line)" fill="var(--line)"
+    fill-opacity="0.12" />
+  <text x="110" y="98" text-anchor="middle" font-size="12" font-weight="600"
+    fill="currentColor">Validation pass</text>
+  <text x="110" y="120" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">loss of one session</text>
+  <rect x="330" y="20" width="220" height="64" rx="10" stroke="var(--accent)" fill="var(--accent)"
+    fill-opacity="0.14" />
+  <text x="440" y="46" text-anchor="middle" font-size="12" font-weight="600"
+    fill="currentColor">Keep</text>
+  <text x="440" y="66" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">best loss moves down, counter clears</text>
+  <rect x="330" y="126" width="220" height="64" rx="10" stroke="var(--line)" fill="var(--line)"
+    fill-opacity="0.12" />
+  <text x="440" y="152" text-anchor="middle" font-size="12" font-weight="600"
+    fill="currentColor">Worse: counter + 1</text>
+  <text x="440" y="172" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">1, then 2, then 3</text>
+  <rect x="590" y="126" width="200" height="64" rx="10" stroke="#b4544a" fill="#b4544a"
+    fill-opacity="0.16" />
+  <text x="690" y="152" text-anchor="middle" font-size="12" font-weight="600"
+    fill="currentColor">Rollback</text>
+  <text x="690" y="172" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.7">restores the best version</text>
+  <path d="M 212 92 L 326 56" stroke="var(--accent)" marker-end="url(#tip4)" />
+  <text x="250" y="70" font-size="10" fill="var(--accent)">loss ≤ best − 0.02</text>
+  <path d="M 212 118 L 326 152" stroke="currentColor" opacity="0.7"
+    marker-end="url(#tip4)" />
+  <text x="250" y="148" font-size="10" fill="currentColor" opacity="0.7">any other loss</text>
+  <path d="M 552 158 L 586 158" stroke="#b4544a" marker-end="url(#tip4)" />
+  <text x="560" y="148" font-size="10" fill="#b4544a">third</text>
+</svg>
+<figcaption>The default threshold is three consecutive worse passes. The plugin settings page sets
+another value. The rules live in `configs_ro/rsi.json` and in the policy record.</figcaption>
+</figure><h2>5. How a rubric becomes one number</h2>
+<p>Each mode has its own rubric. A dimension scores from 0 to 5. The loss weighs each dimension by its
+share and turns the score into a penalty, so 0 is a perfect session and 1 is a failed session.</p>
+<figure>
+<svg viewBox="0 0 800 400" width="100%" role="img" aria-labelledby="rubricTitle rubricDesc"
+  font-family="inherit" fill="none">
+  <title id="rubricTitle">Rubric weights of the two modes</title>
+  <desc id="rubricDesc">In tutoring, correctness carries 30 percent, clarity 20, pedagogy 20,
+    verification 20, and presentation 10. In grading, verdict accuracy carries 35 percent,
+    justification 25, rubric coverage 20, evidence use 10, and consistency 10.</desc>
+  <text x="10" y="24" font-size="12" font-weight="600" fill="currentColor">Tutoring</text>
+  <text x="10" y="52" font-size="11" fill="currentColor">correctness</text>
+  <rect x="150" y="40" width="240" height="16" fill="#2f6f4f" />
+  <text x="398" y="53" font-size="11" fill="currentColor" opacity="0.8">30 %</text>
+  <text x="10" y="80" font-size="11" fill="currentColor">clarity</text>
+  <rect x="150" y="68" width="160" height="16" fill="#2f6f4f" />
+  <text x="318" y="81" font-size="11" fill="currentColor" opacity="0.8">20 %</text>
+  <text x="10" y="108" font-size="11" fill="currentColor">pedagogy</text>
+  <rect x="150" y="96" width="160" height="16" fill="#2f6f4f" />
+  <text x="318" y="109" font-size="11" fill="currentColor" opacity="0.8">20 %</text>
+  <text x="10" y="136" font-size="11" fill="currentColor">verification</text>
+  <rect x="150" y="124" width="160" height="16" fill="#2f6f4f" />
+  <text x="318" y="137" font-size="11" fill="currentColor" opacity="0.8">20 %</text>
+  <text x="10" y="164" font-size="11" fill="currentColor">presentation</text>
+  <rect x="150" y="152" width="80" height="16" fill="#2f6f4f" />
+  <text x="238" y="165" font-size="11" fill="currentColor" opacity="0.8">10 %</text>
+  <line x1="10" y1="192" x2="790" y2="192" stroke="var(--line)" />
+  <text x="10" y="220" font-size="12" font-weight="600" fill="currentColor">Grading</text>
+  <text x="10" y="248" font-size="11" fill="currentColor">verdict accuracy</text>
+  <rect x="150" y="236" width="280" height="16" fill="var(--accent)" />
+  <text x="438" y="249" font-size="11" fill="currentColor" opacity="0.8">35 %</text>
+  <text x="10" y="276" font-size="11" fill="currentColor">justification</text>
+  <rect x="150" y="264" width="200" height="16" fill="var(--accent)" />
+  <text x="358" y="277" font-size="11" fill="currentColor" opacity="0.8">25 %</text>
+  <text x="10" y="304" font-size="11" fill="currentColor">rubric coverage</text>
+  <rect x="150" y="292" width="160" height="16" fill="var(--accent)" />
+  <text x="318" y="305" font-size="11" fill="currentColor" opacity="0.8">20 %</text>
+  <text x="10" y="332" font-size="11" fill="currentColor">evidence use</text>
+  <rect x="150" y="320" width="80" height="16" fill="var(--accent)" />
+  <text x="238" y="333" font-size="11" fill="currentColor" opacity="0.8">10 %</text>
+  <text x="10" y="360" font-size="11" fill="currentColor">consistency</text>
+  <rect x="150" y="348" width="80" height="16" fill="var(--accent)" />
+  <text x="238" y="361" font-size="11" fill="currentColor" opacity="0.8">10 %</text>
+</svg>
+<figcaption>The plugin computes `loss = Σ w · (1 − score / 5) / Σ w`. A session with five 5s scores
+0.0000. A session with five 0s scores 1.0000. The scorecard in `scores.json` reports each dimension
+against its target.</figcaption>
+</figure><h2>6. What each split may change</h2>
+<figure>
+<svg viewBox="0 0 800 210" width="100%" role="img" aria-labelledby="splitTitle splitDesc"
+  font-family="inherit" fill="none">
+  <title id="splitTitle">The three splits</title>
+  <desc id="splitDesc">A training pass writes the evaluation record and an evolution plan. A
+    validation pass writes the record and may roll back. A test pass writes the record and reports a
+    verdict without a rollback.</desc>
+  <rect x="10" y="20" width="250" height="170" rx="10" stroke="var(--accent)" fill="var(--accent)"
+    fill-opacity="0.12" />
+  <text x="135" y="48" text-anchor="middle" font-size="12" font-weight="600"
+    fill="currentColor">Training</text>
+  <text x="135" y="70" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.75">/mcma_forward</text>
+  <text x="30" y="98" font-size="11" fill="currentColor">writes evals/pending/</text>
+  <text x="30" y="120" font-size="11" fill="currentColor">writes a plan</text>
+  <text x="30" y="142" font-size="11" fill="currentColor">waits for a backward pass</text>
+  <text x="30" y="164" font-size="11" fill="currentColor">may change the parameters</text>
+  <rect x="275" y="20" width="250" height="170" rx="10" stroke="var(--line)" fill="var(--line)"
+    fill-opacity="0.12" />
+  <text x="400" y="48" text-anchor="middle" font-size="12" font-weight="600"
+    fill="currentColor">Validation</text>
+  <text x="400" y="70" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.75">/mcma_validate</text>
+  <text x="295" y="98" font-size="11" fill="currentColor">writes evals/validated/</text>
+  <text x="295" y="120" font-size="11" fill="currentColor">writes no plan, no gradient</text>
+  <text x="295" y="142" font-size="11" fill="currentColor">keeps or rolls back</text>
+  <text x="295" y="164" font-size="11" fill="currentColor">records history/decisions.json</text>
+  <rect x="540" y="20" width="250" height="170" rx="10" stroke="var(--line)" fill="var(--line)"
+    fill-opacity="0.12" />
+  <text x="665" y="48" text-anchor="middle" font-size="12" font-weight="600"
+    fill="currentColor">Test</text>
+  <text x="665" y="70" text-anchor="middle" font-size="11" fill="currentColor"
+    opacity="0.75">/mcma_test</text>
+  <text x="560" y="98" font-size="11" fill="currentColor">writes evals/tested/</text>
+  <text x="560" y="120" font-size="11" fill="currentColor">writes no plan, no gradient</text>
+  <text x="560" y="142" font-size="11" fill="currentColor">reports the verdict</text>
+  <text x="560" y="164" font-size="11" fill="currentColor">never rolls back</text>
+</svg>
+<figcaption>The three splits share the stages and differ in what they publish. A rollback keeps the
+proof in `CHECKPOINT.json`, and that record names the version that it restored.</figcaption>
+</figure>
+
+      </article>
+    </main>
+  </body>
+</html>

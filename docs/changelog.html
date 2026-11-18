@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Changelog | dsh-mcma</title>
+    <link rel="stylesheet" href="docs.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-title" href="index.html">dsh-mcma documentation</a>
+        <nav class="site-nav" aria-label="Documentation pages">
+          <a href="index.html">API reference</a>
+          <a href="natural_language_styles.html">Natural language</a>
+          <a href="code_styles.html">Code styles</a>
+          <a href="visualizations.html">How it works</a>
+          <a href="changelog.html">Changelog</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <p class="eyebrow">MCMA history</p>
+      <h1>Changelog</h1>
+      <p class="lede">Every version of this submodule, newest first.</p>
+      <article class="markdown-body">
+<p>Every tag of this submodule, newest first. The list covers the whole repository: the DeepSeek Harness
+plugin, the <code>mcma</code> package, the LangChain DeepAgents rewrite, and the first Python agent.</p>
+<p>The repository has no <code>v0.1.0</code> tag. The oldest tag is <code>v0.2.0</code>. Each tag marks a commit on the <code>main</code>
+branch.</p>
+<h2>The DeepSeek Harness plugin, 0.39 and later</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>v0.39.1</code></td>
+<td>2026-11-18</td>
+<td>Rewrote the README.</td>
+</tr>
+<tr>
+<td><code>v0.39.0</code></td>
+<td>2026-11-18</td>
+<td>Converted the submodule into the <code>dsh-mcma</code> plugin.</td>
+</tr>
+</tbody></table>
+<h2>The mcma package, 0.38 back to 0.15</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>v0.38.1</code></td>
+<td>2026-11-15</td>
+<td>Fixed <code>.gitignore</code>.</td>
+</tr>
+<tr>
+<td><code>v0.38.0</code></td>
+<td>2026-10-07</td>
+<td>Updated <code>batch_config</code> and the system prompt.</td>
+</tr>
+<tr>
+<td><code>v0.37.0</code></td>
+<td>2026-09-29</td>
+<td>Added the <code>batch_config</code> command.</td>
+</tr>
+<tr>
+<td><code>v0.36.1</code></td>
+<td>2026-09-29</td>
+<td>Reorganized the import statements and the docstrings.</td>
+</tr>
+<tr>
+<td><code>v0.36.0</code></td>
+<td>2026-09-28</td>
+<td>Added the reasoning effort entry and rewrote <code>configs.py</code>.</td>
+</tr>
+<tr>
+<td><code>v0.35.1</code></td>
+<td>2026-09-28</td>
+<td>Fixed the keyboard interrupt of the batch commands.</td>
+</tr>
+<tr>
+<td><code>v0.35.0</code></td>
+<td>2026-09-28</td>
+<td>Added the Zhipu provider.</td>
+</tr>
+<tr>
+<td><code>v0.34.0</code></td>
+<td>2026-09-28</td>
+<td>Added tool timeouts.</td>
+</tr>
+<tr>
+<td><code>v0.33.1</code></td>
+<td>2026-09-27</td>
+<td>Fixed six defects in the tools, the configs, the logging, and the readers.</td>
+</tr>
+<tr>
+<td><code>v0.33.0</code></td>
+<td>2026-09-27</td>
+<td>Added the SiliconFlow provider.</td>
+</tr>
+<tr>
+<td><code>v0.32.0</code></td>
+<td>2026-09-26</td>
+<td>Added the Qianwen provider.</td>
+</tr>
+<tr>
+<td><code>v0.31.0</code></td>
+<td>2026-09-26</td>
+<td>Updated the system prompt and the <code>plot_pyplot</code> tool.</td>
+</tr>
+<tr>
+<td><code>v0.30.0</code></td>
+<td>2026-09-23</td>
+<td>Added model and tool configuration.</td>
+</tr>
+<tr>
+<td><code>v0.29.0</code></td>
+<td>2026-09-22</td>
+<td>Added time usage output.</td>
+</tr>
+<tr>
+<td><code>v0.28.0</code></td>
+<td>2026-09-22</td>
+<td>Added freestyle support to <code>write_results</code>.</td>
+</tr>
+<tr>
+<td><code>v0.27.0</code></td>
+<td>2026-09-22</td>
+<td>Added custom provider configuration.</td>
+</tr>
+<tr>
+<td><code>v0.26.0</code></td>
+<td>2026-09-20</td>
+<td>Refactored the output file names.</td>
+</tr>
+<tr>
+<td><code>v0.25.0</code></td>
+<td>2026-09-20</td>
+<td>Added the token usage audit.</td>
+</tr>
+<tr>
+<td><code>v0.24.0</code></td>
+<td>2026-09-16</td>
+<td>Refactored <code>agent_v1</code>.</td>
+</tr>
+<tr>
+<td><code>v0.23.0</code></td>
+<td>2026-08-27</td>
+<td>Added the <code>rec</code> and <code>batch_rec</code> commands.</td>
+</tr>
+<tr>
+<td><code>v0.22.0</code></td>
+<td>2026-08-25</td>
+<td>Updated the agent wrapper for message streaming.</td>
+</tr>
+<tr>
+<td><code>v0.21.0</code></td>
+<td>2026-08-25</td>
+<td>Added parallel batch invoke, a safer model client, and invoke with retry.</td>
+</tr>
+<tr>
+<td><code>v0.20.0</code></td>
+<td>2026-08-23</td>
+<td>Refactored the tools to reduce agent tool calls.</td>
+</tr>
+<tr>
+<td><code>v0.19.0</code></td>
+<td>2026-08-21</td>
+<td>Added the <code>batch_invoke</code> command.</td>
+</tr>
+<tr>
+<td><code>v0.18.0</code></td>
+<td>2026-08-19</td>
+<td>Rewrote <code>SyncedBackend</code> for easier debugging.</td>
+</tr>
+<tr>
+<td><code>v0.17.0</code></td>
+<td>2026-08-18</td>
+<td>Organized the import statements of every Python file.</td>
+</tr>
+<tr>
+<td><code>v0.16.0</code></td>
+<td>2026-08-18</td>
+<td>Renamed the main package from <code>mca</code> to <code>mcma</code>.</td>
+</tr>
+<tr>
+<td><code>v0.15.0</code></td>
+<td>2026-08-14</td>
+<td>Refactored the repository for the coming package work.</td>
+</tr>
+</tbody></table>
+<h2>LangChain DeepAgents rewrite, 0.14 back to 0.4</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>v0.14.0</code></td>
+<td>2026-08-13</td>
+<td>Connected TikZ compilation to the web interface.</td>
+</tr>
+<tr>
+<td><code>v0.13.0</code></td>
+<td>2026-08-06</td>
+<td>Added the TikZ compilation function.</td>
+</tr>
+<tr>
+<td><code>v0.12.0</code></td>
+<td>2026-07-24</td>
+<td>Refactored for the interface update.</td>
+</tr>
+<tr>
+<td><code>v0.11.0</code></td>
+<td>2026-07-23</td>
+<td>Added the <code>draw_tikz_plot</code> tool.</td>
+</tr>
+<tr>
+<td><code>v0.10.0</code></td>
+<td>2026-07-22</td>
+<td>Refactored the directory layout and the file paths.</td>
+</tr>
+<tr>
+<td><code>v0.9.0</code></td>
+<td>2026-07-22</td>
+<td>Added the TikZ plot generation function.</td>
+</tr>
+<tr>
+<td><code>v0.8.0</code></td>
+<td>2026-07-18</td>
+<td>Refactored for security and for the coming interface work.</td>
+</tr>
+<tr>
+<td><code>v0.7.0</code></td>
+<td>2026-07-10</td>
+<td>Added a prototype multimodal user interface.</td>
+</tr>
+<tr>
+<td><code>v0.6.0</code></td>
+<td>2026-07-06</td>
+<td>Renamed the repository to Math-Capable-Agents.</td>
+</tr>
+<tr>
+<td><code>v0.5.0</code></td>
+<td>2026-06-30</td>
+<td>Refactored for the UGMathBench data.</td>
+</tr>
+<tr>
+<td><code>v0.4.0</code></td>
+<td>2026-06-14</td>
+<td>Rewrote the project with the LangChain DeepAgents framework.</td>
+</tr>
+</tbody></table>
+<h2>First Python agent, 0.3 back to 0.2</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>v0.3.0</code></td>
+<td>2026-04-21</td>
+<td>Updated the README.</td>
+</tr>
+<tr>
+<td><code>v0.2.0</code></td>
+<td>2026-04-21</td>
+<td>Added the first two problem workflows and the README.</td>
+</tr>
+</tbody></table>
+<h2>Versioning</h2>
+<p>The repository follows <a href="https://semver.org/">semantic versioning</a> 2.0.0 or later. A tag has the form
+<code>v&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>. A question about the change of one version is answered by
+<code>git log v0.38.0..v0.39.0 --no-merges</code>.</p>
+
+      </article>
+    </main>
+  </body>
+</html>
