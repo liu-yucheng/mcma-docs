@@ -51,6 +51,19 @@ npm run seed
 
 `AGENTS.md` holds the style rules and the repository conventions.
 
+## Versioning
+
+This repository has one special rule: its version tag matches the version tag of the `agents` submodule
+exactly. The two repositories release as one pair, so `agents` `v0.39.2` publishes `agents-docs`
+`v0.39.2`.
+
+- Read the plugin tag before you release this repository: `git -C ../agents describe --tags --abbrev=0`.
+- Tag with that exact string. Do not choose an independent number, and do not add a suffix.
+- Tag this repository after the plugin tag reaches the remote, so a reader never sees a docs tag without
+  the plugin release behind it.
+- A documentation change without a plugin change still takes the current plugin tag. Two tags then name
+  the same plugin version, and the later commit carries the newer documentation.
+
 ## Copyright
 
 ```text
