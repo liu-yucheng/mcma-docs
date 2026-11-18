@@ -57,7 +57,8 @@ This repository has one special rule: its version tag matches the version tag of
 exactly. The two repositories release as one pair, so `agents` `v0.39.2` publishes `agents-docs`
 `v0.39.2`.
 
-- Read the plugin tag before you release this repository: `git -C ../agents describe --tags --abbrev=0`.
+- Read the plugin tag before you release this repository: `git -C ../agents describe --tags --abbrev=0 main`.
+  The `main` argument matters, because the working branch `rel` holds no tag.
 - Tag with that exact string. Do not choose an independent number, and do not add a suffix.
 - Tag this repository after the plugin tag reaches the remote, so a reader never sees a docs tag without
   the plugin release behind it.
