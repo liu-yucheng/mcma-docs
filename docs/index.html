@@ -1,0 +1,144 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="./"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>dsh-mcma - v0.39.2</title><meta name="description" content="Documentation for dsh-mcma"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="index.html" class="title">dsh-mcma - v0.39.2</a>
+<div id="tsd-toolbar-links"><a href="contract.html">Browser contract</a><a href="natural_language_styles.html">Natural language styles</a><a href="code_styles.html">Code styles</a><a href="visualizations.html">How it works</a><a href="changelog.html">Changelog</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
+<ul role="listbox" id="tsd-search-results"></ul>
+<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+<div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<h1>dsh-mcma - v0.39.2</h1></div>
+<div class="tsd-panel tsd-typography"><h1 id="mcma-api-documentation" class="tsd-anchor-link">MCMA API documentation<a href="#mcma-api-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p>MCMA is a DeepSeek Harness plugin. It teaches one math problem, or grades one solution attempt, and
+it learns from its own evaluation of that work. A forward pass runs three stages through isolated
+subagents. A backward pass turns one evolution plan into one new parameters version.</p>
+<h2 id="start-here" class="tsd-anchor-link">Start here<a href="#start-here" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><strong>Commands</strong>: <code>/mcma_forward</code>, <code>/mcma_backward</code>, <code>/mcma_validate</code>, <code>/mcma_test</code>,
+<code>/mcma_feedback</code>, <code>/mcma_help</code>, and <code>/mcma_clear_appdata</code>. The bare <code>/mcma</code> command prints the
+syntax. <code>/mcma_help</code> prints the manual with the live state, and
+<code>/mcma_clear_appdata --yes</code> restores the packaged seed.</li>
+<li><strong>Tools</strong>: <code>mcma_forward</code>, <code>mcma_validate</code>, <code>mcma_test</code>, <code>mcma_backward</code>, <code>mcma_feedback</code>,
+<code>mcma_status</code>, <code>mcma_help</code>, and <code>mcma_clear_appdata</code>. The plugin registers eight tools and eight
+commands.</li>
+<li><strong>Chat interface</strong>: one <code>/mcma...</code> line runs in every chat session, including a new empty session.
+The plugin registers its own <code>/</code> input source, so the line does not depend on the Harness command
+catalogue. The plugin removes one leading <code>@</code> from each argument. A forward, validation, or test
+command also accepts an attached image or file. Ordinary chat text runs through the matching
+tool.</li>
+<li><strong>Command row</strong>: one command writes one row in the transcript. The row carries the mode, the
+split, the problem count, one line for each session with its status, loss, and workspace path, the
+elapsed time, and the app data path. The first command of a session that has no turn starts the
+first turn, and it writes the session title once.</li>
+<li><strong>MCMA view</strong>: one <code>MCMA</code> tab sits next to Chat, Trajectory, and Git Graph. It reads the read-only
+route <code>GET /api/dsh-mcma/state</code> and shows the parameters version, the loss of each split, the
+checkpoint table, the rubric heatmap, and the sessions with the artifact paths.</li>
+<li><strong>Training loop</strong>: <code>configs_rw/</code> holds the parameters, one problem is one data item, and the
+Evaluator subagent is the loss function. A loss is the mean of <code>1 - score / 5</code> over the rubric
+dimensions. The Evolver subagent writes the gradient.</li>
+<li><strong>Stage order</strong>: <code>intake</code>, <code>tutoring</code> or <code>grading</code>, <code>self_eval</code>, and <code>self_evolve</code>. The first
+three stages are the forward pass. The last stage is the backward pass.</li>
+<li><strong>Splits</strong>: a training pass writes <code>evals/pending/</code>, a validation pass writes
+<code>evals/validated/</code>, and a test pass writes <code>evals/tested/</code>. Only a training pass publishes an
+evolution plan.</li>
+<li><strong>Feedback</strong>: <code>/mcma_feedback</code> appends supervision to one pending session, re-runs the evaluator,
+and rewrites the plan. It changes no parameter and no applied version.</li>
+</ul>
+<h2 id="modules" class="tsd-anchor-link">Modules<a href="#modules" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index.ts</code></td>
+<td>Plugin entry: configuration, tools, commands, and the system prompt section.</td>
+</tr>
+<tr>
+<td><code>service.ts</code></td>
+<td>Orchestrator: passes, policy, history, rollback, and feedback.</td>
+</tr>
+<tr>
+<td><code>runner.ts</code></td>
+<td>One session: stages, retries, products, loss, gradient, and plan.</td>
+</tr>
+<tr>
+<td><code>subagents.ts</code></td>
+<td>Activation of one stage and the timeout guard.</td>
+</tr>
+<tr>
+<td><code>prompts.ts</code></td>
+<td>Stage prompts and the parsing of one stage report.</td>
+</tr>
+<tr>
+<td><code>evaluation.ts</code></td>
+<td>Rubric reduction, the loss value, and the scorecard.</td>
+</tr>
+<tr>
+<td><code>optimizer.ts</code></td>
+<td>Pending plans, change application, and parameters versions.</td>
+</tr>
+<tr>
+<td><code>paths.ts</code></td>
+<td>The app-data layout and the workspace layout.</td>
+</tr>
+<tr>
+<td><code>config.ts</code></td>
+<td>The read-only configuration and the parameters versions.</td>
+</tr>
+<tr>
+<td><code>uiState.ts</code></td>
+<td>The read-only projection for the browser page.</td>
+</tr>
+<tr>
+<td><code>settingsBridge.ts</code></td>
+<td>The nine settings routes and the state route.</td>
+</tr>
+<tr>
+<td><code>help.ts</code></td>
+<td>The command manual and the topic pages.</td>
+</tr>
+<tr>
+<td><code>inputs.ts</code></td>
+<td>Resolution of a command argument into one problem record.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="style" class="tsd-anchor-link">Style<a href="#style" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The documentation follows the two reference pages that the build renders: the natural language
+style and the code style. Both pages are in this site.</p>
+<p>Every subagent reads the same two guides from <code>&lt;app_data&gt;/styles/</code> before it writes. The packaged
+seed carries a copy, and <code>npm run seed</code> refreshes that copy from the repository <code>.refs/</code> directory.</p>
+<p>A session writes one product page, <code>report.html</code>, and one code directory, <code>code/</code>, in both modes.
+The page renders its mathematics with KaTeX from LaTeX source. The code directory holds the Python
+scripts, <code>code/requirements.txt</code>, and the figures. The Tutor and the Grader create the environment
+with <code>uv</code> and verify each deduction with numpy, scipy, and matplotlib.</p>
+</div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li></ul></div>
+<div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>On This Page</h3></summary>
+<div class="tsd-accordion-details"><a href="#mcma-api-documentation"><span>MCMA <wbr/>API documentation</span></a>
+<ul>
+<li><a href="#start-here"><span>Start here</span></a></li>
+<li><a href="#modules"><span>Modules</span></a></li>
+<li><a href="#style"><span>Style</span></a></li></ul></div></details></div>
+<div class="site-menu">
+<nav id="tsd-sidebar-links" class="tsd-navigation"><a href="contract.html" class="tsd-nav-link">Browser contract</a><a href="natural_language_styles.html" class="tsd-nav-link">Natural language styles</a><a href="code_styles.html" class="tsd-nav-link">Code styles</a><a href="visualizations.html" class="tsd-nav-link">How it works</a><a href="changelog.html" class="tsd-nav-link">Changelog</a></nav>
+<nav class="tsd-navigation"><a href="modules.html">dsh-mcma - v0.39.2</a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+<li>Loading...</li></ul></nav></div></div></div><footer>
+<p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer>
+<div class="overlay"></div></body></html>
