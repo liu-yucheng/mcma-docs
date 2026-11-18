@@ -177,7 +177,9 @@ The training records belong to the loop and live in the app data.</p>
   <text x="399" y="196" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7">plan</text>
 </svg>
 <figcaption>The arrow points from the product to the record, or from the plan back to the work. The
-Evaluator reads the workspace. The plugin reads `evals.json` and writes `loss.json`.</figcaption>
+Evaluator reads the workspace. The plugin reads `evals.json` and writes `loss.json`. A temporary
+entry, one whose name starts with a dot, does not survive a stage: the runner deletes it and keeps
+`code/.venv/`.</figcaption>
 </figure><h2>4. When the parameters roll back</h2>
 <p>A validation pass compares its loss with the best loss that a kept version reached. The comparison
 uses a tolerance of 0.02. Three worse passes in a row restore the best version.</p>
