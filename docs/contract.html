@@ -108,7 +108,7 @@ threshold of <code>0</code> means automatic in the same way.</p>
 </thead>
 <tbody><tr>
 <td><code>budget.forwardBudgetSeconds</code></td>
-<td>The wall-clock budget that one forward pass must fit. The value is 600 seconds.</td>
+<td>The wall-clock budget that one forward pass must fit. The value is 720 seconds.</td>
 </tr>
 <tr>
 <td><code>budget.tutoringSeconds</code></td>
@@ -120,17 +120,40 @@ threshold of <code>0</code> means automatic in the same way.</p>
 </tr>
 <tr>
 <td><code>budget.validationSeconds</code></td>
-<td>The clock of a validation pass, at 80 percent of the pass that it runs.</td>
+<td>The wall-clock budget of a validation pass. The value is 720 seconds.</td>
 </tr>
 <tr>
 <td><code>budget.testSeconds</code></td>
-<td>The clock of a test pass, at 80 percent in the same way.</td>
+<td>The wall-clock budget of a test pass. The value is 720 seconds.</td>
 </tr>
 <tr>
 <td><code>budget.backwardSeconds</code></td>
-<td>The limit of the self-evolution stage of one session.</td>
+<td>The wall-clock budget of one backward pass. The value is 120 seconds.</td>
 </tr>
 </tbody></table>
+<p>The time budget of a pass is also the limit that the runner enforces. The runner gives each stage
+the smaller of its own limit and the time that the pass has left, so a pass never runs past its
+budget. A pass that reaches the budget stops, records one <code>pass_timeout</code> intervention, and keeps a
+resume record for each stage. A human continues it with the <code>mcma_resume</code> command or with the
+<code>mcma_resume</code> tool.</p>
+<h2>Resume records</h2>
+<p>A session keeps one record for each stage that it started:</p>
+<pre><code class="language-text">&lt;app-data&gt;/sessions/&lt;session-id&gt;/resume/&lt;stage&gt;.json
+</code></pre>
+<p>The record holds the status, the interruption kind, the reason, the attempt, and the prompt file of
+the attempt. A manual interrupt writes the interruption kind <code>manual</code> and no intervention. An
+automatic failure writes the interruption kind <code>automatic</code> and one intervention. A resume keeps
+every stage that holds the status <code>ok</code> and runs the stage that stopped.</p>
+<h2>State projection</h2>
+<p>The state route answers the projection that the MCMA tab draws. The projection holds the
+parameters version, the split losses, the loss history, the checkpoints, the scorecards, the
+sessions, the running session, the pass ledger, and the learning trend.</p>
+<p>The pass ledger holds the latest forward, validation, test, and backward passes. One entry holds
+the kind, the status, the loss, the wall clock, the budget, the share of the budget, the number of
+kept stages, the interruption kind, and the resume command. A backward pass entry comes from the
+checkpoint record of the parameters version, because a backward pass writes no session.</p>
+<p>The learning trend holds the loss of each pass and a smoothed value of the same split. The browser
+page refreshes the state every 3 seconds while the tab is visible.</p>
 <h2>Guards</h2>
 <p>A route refuses a request that the browser marks <code>sec-fetch-site: cross-site</code>. A route also refuses
 a request whose <code>origin</code> host differs from the request host. A request body over 64 KiB is
@@ -144,9 +167,12 @@ Problems: &lt;count&gt;
   Problem: &lt;name&gt; | Loss: &lt;value&gt;
 Decision: &lt;keep|rollback|baseline&gt;
 Verdict: &lt;improved|unchanged|regressed|baseline&gt;
-Elapsed: &lt;seconds&gt;s
+Elapsed: &lt;seconds&gt;s of &lt;budget&gt;s
 App data: &lt;path&gt;
 Error: &lt;text&gt;
+</code></pre>
+<p>The resume command prints one more line:</p>
+<pre><code class="language-text">&lt;sessionId&gt;: resumed at &lt;stage&gt;. The pass kept &lt;count&gt; stage(s).
 </code></pre>
 <p>A change to one of these lines needs a matching change in <code>client/index.js</code> and in
 <code>test/mcma.test.mjs</code>.</p>
