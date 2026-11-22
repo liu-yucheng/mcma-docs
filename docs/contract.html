@@ -159,14 +159,15 @@ page refreshes the state every 3 seconds while the tab is visible.</p>
 a request whose <code>origin</code> host differs from the request host. A request body over 64 KiB is
 refused.</p>
 <h2>Write scope</h2>
-<p>A pass writes only below four roots: the current workspace, the workspace of the pass, the app data,
-and the temporary directory <code>&lt;workspace&gt;/.tmp/</code>. The stage prompt moves every cache variable and
-every managed interpreter into the temporary directory, so a stage needs no write to the home
-directory.</p>
+<p>A pass writes only below four roots: the current DeepSeek Harness workspace (cws), the problem
+workspace (pws), the app data of the plugin (ad), and the temporary directories (temp). The problem
+workspace is the session directory <code>&lt;cws&gt;/&lt;session&gt;/</code>, and its temporary directory is
+<code>&lt;pws&gt;/.tmp/</code>. The stage prompt moves every cache variable and every managed interpreter into the
+temporary directory, so a stage needs no write to the home directory.</p>
 <p>The runner records the top-level entries of the three durable roots before the first stage. At the
-end of the pass it deletes the temporary directory, and it deletes each entry that is new and named
-in the stray list, such as <code>venv</code>, <code>__pycache__</code>, <code>.cache</code>, or <code>node_modules</code>. It deletes no entry
-that the record holds, no <code>code/.venv/</code>, and no <code>.git</code>.</p>
+end of the pass it deletes <code>&lt;pws&gt;/.tmp/</code>, and it deletes each entry that is new and named in the
+stray list, such as <code>venv</code>, <code>__pycache__</code>, <code>.cache</code>, or <code>node_modules</code>. It deletes no entry that the
+record holds, no <code>code/.venv/</code>, and no <code>.git</code>.</p>
 <h2>Command output</h2>
 <p>The command cards read the text of one command row. The row holds one line for each pattern:</p>
 <pre><code class="language-text">Mode: &lt;Tutoring|Grading&gt;
