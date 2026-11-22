@@ -44,7 +44,11 @@ A problem argument is a file path, a directory path, an image path, or the probl
   with numpy, scipy, and matplotlib. A computed result outranks an inferred one.
 - Every subagent follows the two style guides in `<app_data>/styles/`.
 - A temporary entry is a file or a directory whose name starts with a dot. The runner deletes each
-  one from the session workspace after every stage, and it keeps `code/.venv/` and `.git`.
+  one from the session workspace after every stage, and it keeps `code/.venv/`, `.git`, and `.tmp`.
+- A pass writes only below the current workspace, the workspace of the pass, and the app data. The
+  stage prompt moves every cache and every managed interpreter into `<workspace>/.tmp/`, and the
+  runner deletes that directory at the end of the pass. It deletes the stray entries that a stage
+  creates in a root that it must not change, such as a second `venv` or a `__pycache__`.
 - App data defaults to `~/.dsh-mcma/`. The plugin settings page sets the app data root, the five
   stage time limits, and the rollback threshold.
 
@@ -69,8 +73,8 @@ npm run seed
 ## Versioning
 
 This repository has one special rule: its version tag matches the version tag of the `agents` submodule
-exactly. The two repositories release as one pair, so `agents` `v0.41.0` publishes `agents-docs`
-`v0.41.0`.
+exactly. The two repositories release as one pair, so `agents` `v0.41.1` publishes `agents-docs`
+`v0.41.1`.
 
 - Read the plugin tag before you release this repository: `git -C ../agents describe --tags --abbrev=0 main`.
   The `main` argument matters, because the working branch `rel` holds no tag.
