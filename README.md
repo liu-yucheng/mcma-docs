@@ -21,6 +21,7 @@ Install the directory as a DSH bundle. The bundle patch `cordis.patch.yml` inser
 | `/mcma_help [--topics <topics>]` | Print the help page and the live state. |
 | `/mcma_forward [--tutor\|--grader] <problems>` | Training pass. The default mode is `--tutor`. |
 | `/mcma_backward <session-id> ...` | Apply one pending evolution plan per session. |
+| `/mcma_resume [<session-id>] [--stage <stage>]` | Continue a stopped session from the stage that stopped. |
 | `/mcma_feedback --session <id> <text> ...` | Add human feedback to pending sessions. |
 | `/mcma_validate [--tutor\|--grader] <problems>` | Validation pass. It rolls back after three worse passes. |
 | `/mcma_test [--tutor\|--grader] <problems>` | Test pass. It changes no parameters version. |
@@ -30,14 +31,28 @@ A problem argument is a file path, a directory path, an image path, or the probl
 
 ## Behavior
 
-- One forward pass fits 10 minutes, and it runs the tutoring stage or the grading stage, never
-  both. It writes `report.html` and `code/` into the session workspace, and the evaluation record
-  into the app data.
+- One forward, validation, or test pass fits 12 minutes, and one backward pass fits 2 minutes. The
+  runner gives each stage the time that the pass has left, so a pass never runs past its budget. A
+  forward pass runs the tutoring stage or the grading stage, never both. It writes `report.html`
+  and `code/` into the session workspace, and the evaluation record into the app data.
+- Every stage keeps a resume record. A manual interrupt writes no intervention. An automatic
+  failure writes one. A human continues a stopped session with `/mcma_resume`.
+- A backward pass waits for the Evolver stage, applies the plan over the newest parameters
+  version, and merges the plan again after the Evolver stage. `prompt.extra` extends and never
+  replaces, so a lesson survives the next pass.
 - The Tutor and the Grader create a Python environment with `uv`, and they verify each deduction
   with numpy, scipy, and matplotlib. A computed result outranks an inferred one.
 - Every subagent follows the two style guides in `<app_data>/styles/`.
+- A temporary entry is a file or a directory whose name starts with a dot. The runner deletes each
+  one from the session workspace after every stage, and it keeps `code/.venv/` and `.git`.
 - App data defaults to `~/.dsh-mcma/`. The plugin settings page sets the app data root, the five
   stage time limits, and the rollback threshold.
+
+## Documentation site
+
+The `docs/` directory holds the rendered documentation site: the API reference, the contract page,
+the style guides, the `How it works` page, and the changelog. Open `docs/index.html` in a browser.
+The source lives in the `agents` submodule, and `bash generate-docs.bash` rebuilds the site there.
 
 ## Development
 
@@ -54,8 +69,8 @@ npm run seed
 ## Versioning
 
 This repository has one special rule: its version tag matches the version tag of the `agents` submodule
-exactly. The two repositories release as one pair, so `agents` `v0.39.2` publishes `agents-docs`
-`v0.39.2`.
+exactly. The two repositories release as one pair, so `agents` `v0.41.0` publishes `agents-docs`
+`v0.41.0`.
 
 - Read the plugin tag before you release this repository: `git -C ../agents describe --tags --abbrev=0 main`.
   The `main` argument matters, because the working branch `rel` holds no tag.
