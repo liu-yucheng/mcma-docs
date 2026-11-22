@@ -38,6 +38,11 @@ branch.</p>
 </tr>
 </thead>
 <tbody><tr>
+<td><code>v0.41.2</code></td>
+<td>2026-11-22</td>
+<td>Named the four roots of a pass in every stage prompt and every evolution prompt: the current DeepSeek Harness workspace (cws), the problem workspace (pws), the app data of the plugin (ad), and the temporary directories (temp). The rule list, the session facts, and the documentation use the same four names.</td>
+</tr>
+<tr>
 <td><code>v0.41.1</code></td>
 <td>2026-11-22</td>
 <td>Kept every write of a pass inside the current workspace, the workspace of the pass, the app data, and one temporary directory. The pass moved each cache and each managed interpreter into <code>&lt;workspace&gt;/.tmp/</code>, deleted that directory at the end of the pass, and deleted each stray environment or <code>__pycache__</code> that a stage created in a root that it must not change.</td>
