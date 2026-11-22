@@ -1,5 +1,5 @@
-<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>SessionRunConfig | dsh-mcma - v0.41.0</title><meta name="description" content="Documentation for dsh-mcma"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
-<div class="tsd-toolbar-contents container"><a href="../index.html" class="title">dsh-mcma - v0.41.0</a>
+<!DOCTYPE html><html class="default" lang="en" data-base="../"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>SessionRunConfig | dsh-mcma - v0.41.1</title><meta name="description" content="Documentation for dsh-mcma"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/icons.js" id="tsd-icons-script"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="../index.html" class="title">dsh-mcma - v0.41.1</a>
 <div id="tsd-toolbar-links"><a href="contract.html">Browser contract</a><a href="../natural_language_styles.html">Natural language styles</a><a href="../code_styles.html">Code styles</a><a href="../visualizations.html">How it works</a><a href="../changelog.html">Changelog</a></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
 <ul role="listbox" id="tsd-search-results"></ul>
 <div id="tsd-search-status" aria-live="polite" aria-atomic="true">
@@ -16,7 +16,7 @@
 </div></section>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">SessionRunConfig</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#ctx">ctx</a><span class="tsd-signature-symbol">:</span> <a href="dsh.PluginContext.html" class="tsd-signature-type tsd-kind-interface">PluginContext</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#parent">parent</a><span class="tsd-signature-symbol">:</span> <a href="dsh.Agent.html" class="tsd-signature-type tsd-kind-interface">Agent</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#signal">signal</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AbortSignal</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#layout">layout</a><span class="tsd-signature-symbol">:</span> <a href="paths.McmaLayout.html" class="tsd-signature-type tsd-kind-interface">McmaLayout</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#problem">problem</a><span class="tsd-signature-symbol">:</span> <a href="types.ProblemInput.html" class="tsd-signature-type tsd-kind-interface">ProblemInput</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#subagents">subagents</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><br/>        <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/types.SubagentName.html" class="tsd-signature-type tsd-kind-type-alias">SubagentName</a><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">config</span><span class="tsd-signature-symbol">:</span> <a href="types.SubagentConfig.html" class="tsd-signature-type tsd-kind-interface">SubagentConfig</a><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">prompt</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#rsi">rsi</a><span class="tsd-signature-symbol">:</span> <a href="types.RsiConfig.html" class="tsd-signature-type tsd-kind-interface">RsiConfig</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#provider">provider</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#parametersversion">parametersVersion</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#language">language</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#limits">limits</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#deadline">deadline</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#budgetseconds">budgetSeconds</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#keepstages">keepStages</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-keyword">readonly</span> <a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#fromstage">fromStage</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">&quot;&quot;</span> <span class="tsd-signature-symbol">|</span> <a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#record">record</a><span class="tsd-signature-symbol">?:</span> <a href="types.SessionRecord.html" class="tsd-signature-type tsd-kind-interface">SessionRecord</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#logger">logger</a><span class="tsd-signature-symbol">?:</span> <a href="dsh.Logger.html" class="tsd-signature-type tsd-kind-interface">Logger</a><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:91</li></ul></aside>
+<li>Defined in runner.ts:92</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -51,119 +51,119 @@
 <div class="tsd-comment tsd-typography"><p>The plugin context.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:93</li></ul></aside></section>
+<li>Defined in runner.ts:94</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="parent"><code class="tsd-tag">Readonly</code><span>parent</span><a href="#parent" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">parent</span><span class="tsd-signature-symbol">:</span> <a href="dsh.Agent.html" class="tsd-signature-type tsd-kind-interface">Agent</a></div>
 <div class="tsd-comment tsd-typography"><p>The parent agent of the stages.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:95</li></ul></aside></section>
+<li>Defined in runner.ts:96</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="signal"><code class="tsd-tag">Readonly</code><span>signal</span><a href="#signal" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">signal</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AbortSignal</span></div>
 <div class="tsd-comment tsd-typography"><p>The signal that cancels the run.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:97</li></ul></aside></section>
+<li>Defined in runner.ts:98</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="layout"><code class="tsd-tag">Readonly</code><span>layout</span><a href="#layout" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">layout</span><span class="tsd-signature-symbol">:</span> <a href="paths.McmaLayout.html" class="tsd-signature-type tsd-kind-interface">McmaLayout</a></div>
 <div class="tsd-comment tsd-typography"><p>The layout of the session.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:99</li></ul></aside></section>
+<li>Defined in runner.ts:100</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="problem"><code class="tsd-tag">Readonly</code><span>problem</span><a href="#problem" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">problem</span><span class="tsd-signature-symbol">:</span> <a href="types.ProblemInput.html" class="tsd-signature-type tsd-kind-interface">ProblemInput</a></div>
 <div class="tsd-comment tsd-typography"><p>The problem input of the session.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:101</li></ul></aside></section>
+<li>Defined in runner.ts:102</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="subagents"><code class="tsd-tag">Readonly</code><span>subagents</span><a href="#subagents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">subagents</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><br/>    <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/types.SubagentName.html" class="tsd-signature-type tsd-kind-type-alias">SubagentName</a><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">config</span><span class="tsd-signature-symbol">:</span> <a href="types.SubagentConfig.html" class="tsd-signature-type tsd-kind-interface">SubagentConfig</a><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">prompt</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">&gt;</span></div>
 <div class="tsd-comment tsd-typography"><p>The configuration of each subagent and its version notes.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:103</li></ul></aside></section>
+<li>Defined in runner.ts:104</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="rsi"><code class="tsd-tag">Readonly</code><span>rsi</span><a href="#rsi" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">rsi</span><span class="tsd-signature-symbol">:</span> <a href="types.RsiConfig.html" class="tsd-signature-type tsd-kind-interface">RsiConfig</a></div>
 <div class="tsd-comment tsd-typography"><p>The read-only self-evolution configuration.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:105</li></ul></aside></section>
+<li>Defined in runner.ts:106</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="provider"><code class="tsd-tag">Readonly</code><span>provider</span><a href="#provider" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">provider</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The name of the provider of the subagents. An empty text selects the provider.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:107</li></ul></aside></section>
+<li>Defined in runner.ts:108</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="parametersversion"><code class="tsd-tag">Readonly</code><span>parameters<wbr/>Version</span><a href="#parametersversion" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">parametersVersion</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The parameters version of the pass.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:109</li></ul></aside></section>
+<li>Defined in runner.ts:110</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="language"><code class="tsd-tag">Readonly</code><span>language</span><a href="#language" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">language</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The language specification of the pass.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:111</li></ul></aside></section>
+<li>Defined in runner.ts:112</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="limits"><code class="tsd-tag">Readonly</code><span>limits</span><a href="#limits" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">limits</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a><span class="tsd-signature-symbol">,</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 <div class="tsd-comment tsd-typography"><p>The time limit of each stage in seconds.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:113</li></ul></aside></section>
+<li>Defined in runner.ts:114</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="deadline"><code class="tsd-tag">Readonly</code><span>deadline</span><a href="#deadline" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">deadline</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The moment at which the pass stops, in milliseconds since the epoch.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:115</li></ul></aside></section>
+<li>Defined in runner.ts:116</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="budgetseconds"><code class="tsd-tag">Readonly</code><span>budget<wbr/>Seconds</span><a href="#budgetseconds" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">budgetSeconds</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 <div class="tsd-comment tsd-typography"><p>The wall-clock budget of the pass in seconds.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:117</li></ul></aside></section>
+<li>Defined in runner.ts:118</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="keepstages"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>keep<wbr/>Stages</span><a href="#keepstages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">keepStages</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-keyword">readonly</span> <a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a><span class="tsd-signature-symbol">[]</span></div>
 <div class="tsd-comment tsd-typography"><p>The stages that an earlier attempt finished. A resume pass keeps them.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:119</li></ul></aside></section>
+<li>Defined in runner.ts:120</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="fromstage"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>from<wbr/>Stage</span><a href="#fromstage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">fromStage</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">&quot;&quot;</span> <span class="tsd-signature-symbol">|</span> <a href="../types/types.StageId.html" class="tsd-signature-type tsd-kind-type-alias">StageId</a></div>
 <div class="tsd-comment tsd-typography"><p>The stage at which a resume pass starts. An empty text runs the whole pipeline.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:121</li></ul></aside></section>
+<li>Defined in runner.ts:122</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="record"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>record</span><a href="#record" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">record</span><span class="tsd-signature-symbol">?:</span> <a href="types.SessionRecord.html" class="tsd-signature-type tsd-kind-interface">SessionRecord</a></div>
 <div class="tsd-comment tsd-typography"><p>The stored record of an earlier run of the same session, when one exists.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:123</li></ul></aside></section>
+<li>Defined in runner.ts:124</li></ul></aside></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="logger"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>logger</span><a href="#logger" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">logger</span><span class="tsd-signature-symbol">?:</span> <a href="dsh.Logger.html" class="tsd-signature-type tsd-kind-interface">Logger</a></div>
 <div class="tsd-comment tsd-typography"><p>The logger of the plugin.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in runner.ts:125</li></ul></aside></section></section></details></div>
+<li>Defined in runner.ts:126</li></ul></aside></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -182,7 +182,7 @@
 <div><a href="#ctx"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>ctx</span></a><a href="#parent"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>parent</span></a><a href="#signal"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>signal</span></a><a href="#layout"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>layout</span></a><a href="#problem"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>problem</span></a><a href="#subagents"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>subagents</span></a><a href="#rsi"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>rsi</span></a><a href="#provider"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>provider</span></a><a href="#parametersversion"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>parameters<wbr/>Version</span></a><a href="#language"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>language</span></a><a href="#limits"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>limits</span></a><a href="#deadline"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>deadline</span></a><a href="#budgetseconds"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>budget<wbr/>Seconds</span></a><a href="#keepstages"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>keep<wbr/>Stages</span></a><a href="#fromstage"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>from<wbr/>Stage</span></a><a href="#record"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>record</span></a><a href="#logger"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>logger</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav id="tsd-sidebar-links" class="tsd-navigation"><a href="contract.html" class="tsd-nav-link">Browser contract</a><a href="../natural_language_styles.html" class="tsd-nav-link">Natural language styles</a><a href="../code_styles.html" class="tsd-nav-link">Code styles</a><a href="../visualizations.html" class="tsd-nav-link">How it works</a><a href="../changelog.html" class="tsd-nav-link">Changelog</a></nav>
-<nav class="tsd-navigation"><a href="../modules.html">dsh-mcma - v0.41.0</a>
+<nav class="tsd-navigation"><a href="../modules.html">dsh-mcma - v0.41.1</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">
 <li>Loading...</li></ul></nav></div></div></div><footer>
 <p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer>
