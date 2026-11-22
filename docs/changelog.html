@@ -38,6 +38,11 @@ branch.</p>
 </tr>
 </thead>
 <tbody><tr>
+<td><code>v0.41.1</code></td>
+<td>2026-11-22</td>
+<td>Kept every write of a pass inside the current workspace, the workspace of the pass, the app data, and one temporary directory. The pass moved each cache and each managed interpreter into <code>&lt;workspace&gt;/.tmp/</code>, deleted that directory at the end of the pass, and deleted each stray environment or <code>__pycache__</code> that a stage created in a root that it must not change.</td>
+</tr>
+<tr>
 <td><code>v0.41.0</code></td>
 <td>2026-11-22</td>
 <td>Limited a forward, validation, or test pass to 12 minutes and a backward pass to 2 minutes. Added resumable stages, the pass ledger, the learning curve, and the learning-loop repairs. Fixed the mouse wheel of the MCMA tab.</td>
